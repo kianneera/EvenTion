@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graduation Packages | EvenTion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f7efff;
+      background: linear-gradient(130deg, #140327, #321255, #0d2a51, #5a0f59);
+      background-size: 250% 250%;
+      animation: bg 16s ease infinite;
+      min-height: 100vh;
+    }
+    @keyframes bg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    header, footer { padding: 16px 8%; background: rgba(10, 4, 22, 0.75); border-bottom: 1px solid #4d2f74; }
+    footer { border-bottom: none; border-top: 1px solid #4d2f74; margin-top: 30px; }
+    .logo { font-size: 2rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 10px #ff1e8a, 0 0 22px #6e4bff; }
+    nav a { color: #fff; text-decoration: none; margin-right: 10px; font-weight: 700; }
+    main { max-width: 1060px; margin: 35px auto; padding: 0 16px; }
+    h1 { color: #ffd84d; text-align: center; }
+    .sub { text-align: center; color: #dccaff; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+    .card { background: rgba(35, 15, 62, 0.9); border: 1px solid #5a3b88; border-radius: 12px; overflow: hidden; }
+    img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+    .content { padding: 12px; }
+    .price { color: #5effd6; font-weight: 800; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">EvenTion</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="graduation.html">Graduation</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Graduation Packages</h1>
+    <p class="sub">Added by request — dedicated options for graduation celebrations.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="bday_richkid1.jpg" alt="Graduation Elegant Stage Setup" />
+        <div class="content">
+          <h3>Graduation Elegant Stage Setup</h3>
+          <p>Premium setup with backdrop styling, balloons, and congratulatory decor.</p>
+          <div class="price">₱5,800.00</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="bday_richkid2.jpg" alt="Graduation Premium Gift & Decor" />
+        <div class="content">
+          <h3>Graduation Premium Gift & Decor</h3>
+          <p>Gift table arrangement, celebration props, and customizable color palette.</p>
+          <div class="price">₱7,600.00</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="bday_yayamanin2.jpg" alt="Graduation Signature Family Package" />
+        <div class="content">
+          <h3>Graduation Signature Family Package</h3>
+          <p>Complete family-style setup with photo area and premium accent styling.</p>
+          <div class="price">₱9,000.00</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <strong>EvenTion</strong>
+    <div>© 2026 EvenTion. Crafted for unforgettable celebrations.</div>
+  </footer>
+</body>
+</html>
