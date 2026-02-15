@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | EvenTion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f7efff;
+      background: linear-gradient(130deg, #140327, #321255, #0d2a51, #5a0f59);
+      background-size: 250% 250%;
+      animation: bg 16s ease infinite;
+      min-height: 100vh;
+    }
+    @keyframes bg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    header, footer {
+      padding: 16px 8%;
+      background: rgba(10, 4, 22, 0.75);
+      border-bottom: 1px solid #4d2f74;
+    }
+    footer { border-bottom: none; border-top: 1px solid #4d2f74; margin-top: 30px; }
+    .logo {
+      font-size: 2rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      text-shadow: 0 0 10px #ff1e8a, 0 0 22px #6e4bff;
+    }
+    nav a { color: #fff; text-decoration: none; margin-right: 10px; font-weight: 700; }
+    nav a:hover { color: #ffd84d; }
+    main { max-width: 960px; margin: 40px auto; padding: 0 16px; }
+    .card { background: rgba(35, 15, 62, 0.9); border: 1px solid #5a3b88; border-radius: 14px; padding: 24px; }
+    h1 { color: #ffd84d; }
+    .founders { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 12px; margin-top: 18px; }
+    .founder { background: #2a164a; border: 1px solid #614192; border-radius: 10px; padding: 14px; font-weight: 700; }
+    .note { margin-top: 14px; color: #d9c8ff; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">EvenTion</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="graduation.html">Graduation</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>About EvenTion</h1>
+      <p class="note">EvenTion is a celebration and surprise-event planning brand focused on creating meaningful experiences for birthdays, weddings, holidays, and milestone moments.</p>
+      <h2>Founders</h2>
+      <div class="founders">
+        <div class="founder">Aivan Saranguero</div>
+        <div class="founder">Kissie Dianne Are</div>
+        <div class="founder">Heinrich Discutido</div>
+        <div class="founder">Cielo Mae San Juan</div>
+      </div>
+      <p class="note">We founded EvenTion to make event planning more accessible, stylish, and personalized. Our team combines design, logistics, and creativity to deliver memorable setups that fit each client’s story.</p>
+    </div>
+  </main>
+
+  <footer>
+    <strong>EvenTion</strong>
+    <div>© 2026 EvenTion. Crafted for unforgettable celebrations.</div>
+  </footer>
+</body>
+</html>
