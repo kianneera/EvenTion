@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EvenTion | Services</title>
+  <title>Knock Knock Saya | Services</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     :root {
@@ -52,13 +52,15 @@
     .cart-item ul { margin-left:18px; margin-top:6px; color:#e0d1ff; }
     .total { color:var(--mint); font-weight:900; font-size:1.2rem; margin-top:8px; }
 
+    .checkout-btn { margin-top: 12px; background: #21a745; }
+
     footer { padding:24px 8%; border-top:1px solid #4a2e74; background:rgba(12,4,26,.7); display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
     .foot-brand { font-weight:900; color:var(--gold); }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">EvenTion</div>
+    <div class="logo">Knock Knock Saya</div>
     <nav>
       <a href="index.html">Home</a>
       <a class="active" href="services.html">Services</a>
@@ -69,7 +71,7 @@
 
   <section class="hero">
     <h1>Services & Checkout</h1>
-    <p>Choose from Birthday, Mother's Day, Father's Day, and Valentine's Day packages with budget, deluxe, premium, and more tiers.</p>
+    <p>Choose from Birthday, Mother's Day, Father's Day, and Valentine's Day packages based on our posted package images and prices.</p>
   </section>
 
   <section class="grid" id="main-grid"></section>
@@ -97,52 +99,53 @@
       <h2 style="color:var(--gold);margin-bottom:8px">Your Cart</h2>
       <div id="cartItemsContainer"></div>
       <div class="total" id="cartTotal">Total: ₱0.00</div>
+      <button class="btn checkout-btn" id="checkoutBtn">CHECKOUT</button>
     </div>
   </div>
 
   <footer>
-    <div><div class="foot-brand">EvenTion</div><div>Packages for Birthday, Mother's Day, Father's Day, and Valentine's Day.</div></div>
-    <div>© 2026 EvenTion. All rights reserved.</div>
+    <div><div class="foot-brand">Knock Knock Saya</div><div>We Knock. You Smile.</div></div>
+    <div>© 2026 Knock Knock Saya. All rights reserved.</div>
   </footer>
 
   <script>
     const packageData = [
-      { id: 1, category: 'Birthday', tier: 'Budget', name: 'Birthday Budget Package', price: 1800, image: 'bday_budget.jpg', badge: 'BUDGET' },
-      { id: 2, category: 'Birthday', tier: 'Standard', name: 'Birthday Food Bilao Package', price: 2500, image: 'bday_foodbilao.jpg', badge: 'STANDARD' },
-      { id: 3, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Personalized Cake Package', price: 3200, image: 'bday_personalizedcake.jpg', badge: 'DELUXE' },
-      { id: 4, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Teddy Bear Package', price: 3400, image: 'bday_teddybear.jpg', badge: 'DELUXE' },
-      { id: 5, category: 'Birthday', tier: 'Elite', name: 'Birthday Elite Package', price: 4200, image: 'bday_elite.jpg', badge: 'ELITE' },
-      { id: 6, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 1', price: 5000, image: 'bday_richkid1.jpg', badge: 'PREMIUM' },
-      { id: 7, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 2', price: 5300, image: 'bday_richkid2.jpg', badge: 'PREMIUM' },
-      { id: 8, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 1', price: 5600, image: 'bday_yayamanin1.jpg', badge: 'VIP' },
-      { id: 9, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 2', price: 5900, image: 'bday_yayamanin2.jpg', badge: 'VIP' },
+      { id: 1, category: 'Birthday', tier: 'Budget', name: 'Birthday Budget Package', price: 2199, image: 'bday_budget.jpg', badge: 'BUDGET' },
+      { id: 2, category: 'Birthday', tier: 'Standard', name: 'Birthday Food Bilao Pulutan Package', price: 749, image: 'bday_foodbilao.jpg', badge: 'STANDARD' },
+      { id: 3, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Personalized Cake Package', price: 900, image: 'bday_personalizedcake.jpg', badge: 'DELUXE' },
+      { id: 4, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Money & Teddy Bear Bouquet', price: 799, image: 'bday_teddybear.jpg', badge: 'DELUXE' },
+      { id: 5, category: 'Birthday', tier: 'Elite', name: 'Birthday Elite Package', price: 4999, image: 'bday_elite.jpg', badge: 'ELITE' },
+      { id: 6, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 1', price: 3499, image: 'bday_richkid1.jpg', badge: 'PREMIUM' },
+      { id: 7, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 2', price: 3499, image: 'bday_richkid2.jpg', badge: 'PREMIUM' },
+      { id: 8, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 1', price: 2999, image: 'bday_yayamanin1.jpg', badge: 'VIP' },
+      { id: 9, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 2', price: 2999, image: 'bday_yayamanin2.jpg', badge: 'VIP' },
 
-      { id: 10, category: "Mother's Day", tier: 'Budget', name: "Mother's Day Budget Package", price: 1600, image: 'mother_budget.jpg', badge: 'BUDGET' },
-      { id: 11, category: "Mother's Day", tier: 'Student', name: "Mother's Day Student Package", price: 2000, image: 'mother_student.jpg', badge: 'STUDENT' },
-      { id: 12, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Standard Package", price: 2500, image: 'mother_standard.jpg', badge: 'STANDARD' },
-      { id: 13, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Bouquet Package", price: 2800, image: 'mother_bouquet.jpg', badge: 'FLOWER' },
-      { id: 14, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Deluxe Package", price: 3400, image: 'mother_deluxe.jpg', badge: 'DELUXE' },
-      { id: 15, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Pillows & Chocolates Package", price: 3600, image: 'mother_pillows_chocolates.jpg', badge: 'DELUXE' },
-      { id: 16, category: "Mother's Day", tier: 'Elite', name: "Mother's Day Elite Package", price: 4300, image: 'mother_elite.jpg', badge: 'ELITE' },
-      { id: 17, category: "Mother's Day", tier: 'Premium', name: "Mother's Day Premium Package", price: 4800, image: 'mother_premium.jpg', badge: 'PREMIUM' },
+      { id: 10, category: "Mother's Day", tier: 'Budget', name: "Mother's Day Budget Package", price: 999, image: 'mother_budget.jpg', badge: 'BUDGET' },
+      { id: 11, category: "Mother's Day", tier: 'Student', name: "Mother's Day Student Package", price: 699, image: 'mother_student.jpg', badge: 'STUDENT' },
+      { id: 12, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Standard Package", price: 1499, image: 'mother_standard.jpg', badge: 'STANDARD' },
+      { id: 13, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Bouquet Package", price: 999, image: 'mother_bouquet.jpg', badge: 'FLOWER' },
+      { id: 14, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Deluxe Package", price: 1999, image: 'mother_deluxe.jpg', badge: 'DELUXE' },
+      { id: 15, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Pillows & Chocolates", price: 199, image: 'mother_pillows_chocolates.jpg', badge: 'DELUXE' },
+      { id: 16, category: "Mother's Day", tier: 'Elite', name: "Mother's Day Elite Package", price: 2999, image: 'mother_elite.jpg', badge: 'ELITE' },
+      { id: 17, category: "Mother's Day", tier: 'Premium', name: "Mother's Day Premium Package", price: 2499, image: 'mother_premium.jpg', badge: 'PREMIUM' },
 
-      { id: 18, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package", price: 1700, image: 'father_budget.jpg', badge: 'BUDGET' },
-      { id: 19, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package 2", price: 1900, image: 'father_budget2.jpg', badge: 'BUDGET' },
-      { id: 20, category: "Father's Day", tier: 'Student', name: "Father's Day Student Package", price: 2200, image: 'father_student.jpg', badge: 'STUDENT' },
-      { id: 21, category: "Father's Day", tier: 'Standard', name: "Father's Day Standard Package", price: 2600, image: 'father_standard.jpg', badge: 'STANDARD' },
-      { id: 22, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Deluxe Package", price: 3300, image: 'father_deluxe.jpg', badge: 'DELUXE' },
-      { id: 23, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Sweet Cakes Package", price: 3600, image: 'father_sweetcakes.jpg', badge: 'DELUXE' },
-      { id: 24, category: "Father's Day", tier: 'Premium', name: "Father's Day Money Sash + Pulutan Package", price: 4200, image: 'father_moneysash_pulutan.jpg', badge: 'PREMIUM' },
-      { id: 25, category: "Father's Day", tier: 'Premium', name: "Father's Day Premium Package", price: 4700, image: 'father_premium.jpg', badge: 'PREMIUM' },
+      { id: 18, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package 1", price: 999, image: 'father_budget.jpg', badge: 'BUDGET' },
+      { id: 19, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package 2", price: 999, image: 'father_budget2.jpg', badge: 'BUDGET' },
+      { id: 20, category: "Father's Day", tier: 'Student', name: "Father's Day Student Package", price: 499, image: 'father_student.jpg', badge: 'STUDENT' },
+      { id: 21, category: "Father's Day", tier: 'Standard', name: "Father's Day Standard Package", price: 1499, image: 'father_standard.jpg', badge: 'STANDARD' },
+      { id: 22, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Deluxe Package", price: 1999, image: 'father_deluxe.jpg', badge: 'DELUXE' },
+      { id: 23, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Sweet Cakes", price: 299, image: 'father_sweetcakes.jpg', badge: 'DELUXE' },
+      { id: 24, category: "Father's Day", tier: 'Premium', name: "Father's Day Money Sash + Pulutan", price: 699, image: 'father_moneysash_pulutan.jpg', badge: 'PREMIUM' },
+      { id: 25, category: "Father's Day", tier: 'Premium', name: "Father's Day Premium Package", price: 2499, image: 'father_premium.jpg', badge: 'PREMIUM' },
 
-      { id: 26, category: "Valentine's Day", tier: 'Budget', name: "Valentine's Day Budget Package", price: 1800, image: 'val_budget.jpg', badge: 'BUDGET' },
-      { id: 27, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Standard Package", price: 2400, image: 'val_standard.jpg', badge: 'STANDARD' },
-      { id: 28, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Bouquet + Cakes Package", price: 2900, image: 'val_bouquet_cakes.jpg', badge: 'FLOWER' },
-      { id: 29, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Deluxe Package", price: 3400, image: 'val_deluxe.jpg', badge: 'DELUXE' },
-      { id: 30, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Pillow + Chocolates Package", price: 3600, image: 'val_pillow_chocolates.jpg', badge: 'DELUXE' },
-      { id: 31, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium Package", price: 4200, image: 'val_premium1.jpg', badge: 'PREMIUM' },
-      { id: 32, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium One & Half Package", price: 4500, image: 'val_premium_onehalf.jpg', badge: 'PREMIUM' },
-      { id: 33, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium Money Package", price: 4800, image: 'val_premiummoney.jpg', badge: 'PREMIUM' }
+      { id: 26, category: "Valentine's Day", tier: 'Budget', name: "Valentine's Day Budget Package", price: 999, image: 'val_budget.jpg', badge: 'BUDGET' },
+      { id: 27, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Standard Package", price: 1499, image: 'val_standard.jpg', badge: 'STANDARD' },
+      { id: 28, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Bouquet + Cakes", price: 1199, image: 'val_bouquet_cakes.jpg', badge: 'FLOWER' },
+      { id: 29, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Deluxe Package", price: 1999, image: 'val_deluxe.jpg', badge: 'DELUXE' },
+      { id: 30, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Pillow + Chocolates", price: 300, image: 'val_pillow_chocolates.jpg', badge: 'DELUXE' },
+      { id: 31, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium (1 Dozen Rose)", price: 3499, image: 'val_premium1.jpg', badge: 'PREMIUM' },
+      { id: 32, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium (1/2 Dozen Rose)", price: 2999, image: 'val_premium_onehalf.jpg', badge: 'PREMIUM' },
+      { id: 33, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium Money Package", price: 2499, image: 'val_premiummoney.jpg', badge: 'PREMIUM' }
     ];
 
     const materialsByCategory = {
@@ -159,6 +162,7 @@
     const cartModal = document.getElementById('cartModal');
     const materialsContainer = document.getElementById('materialsContainer');
     const phpMoney = (v) => `₱${v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    const internalCheckoutEmail = 'arekissie@gmail.com';
 
     function renderPackages() {
       gridEl.innerHTML = packageData.map(p => `
@@ -200,7 +204,11 @@
     function renderCart() {
       const wrap = document.getElementById('cartItemsContainer');
       document.getElementById('cart-counter').innerText = cart.length;
-      if (!cart.length) { wrap.innerHTML = '<p>Your cart is empty.</p>'; document.getElementById('cartTotal').innerText = 'Total: ₱0.00'; return; }
+      if (!cart.length) {
+        wrap.innerHTML = '<p>Your cart is empty.</p>';
+        document.getElementById('cartTotal').innerText = 'Total: ₱0.00';
+        return;
+      }
 
       let total = 0;
       wrap.innerHTML = cart.map(item => {
@@ -230,6 +238,32 @@
         materials: selectedMaterials
       });
       renderCart(); this.reset(); closeModal('bookingModal'); alert('Added to cart!');
+    });
+
+    document.getElementById('checkoutBtn').addEventListener('click', function() {
+      if (!cart.length) {
+        alert('Your cart is empty.');
+        return;
+      }
+      const orderLines = [];
+      let grand = 0;
+      cart.forEach((item, i) => {
+        const matsTotal = item.materials.reduce((s, m) => s + m.price * m.qty, 0);
+        const line = item.packagePrice + matsTotal;
+        grand += line;
+        orderLines.push(
+          `${i + 1}. ${item.packageName} (${item.category})\n` +
+          `Recipient: ${item.recipient}\n` +
+          `Date: ${item.date}\n` +
+          `Address: ${item.address}\n` +
+          `Package Price: ${phpMoney(item.packagePrice)}\n` +
+          `Add-ons: ${item.materials.length ? item.materials.map(m => `${m.name} x${m.qty}`).join(', ') : 'None'}\n` +
+          `Line Total: ${phpMoney(line)}`
+        );
+      });
+      const subject = encodeURIComponent('Knock Knock Saya Checkout Order');
+      const body = encodeURIComponent(`New checkout order:\n\n${orderLines.join('\n\n')}\n\nGrand Total: ${phpMoney(grand)}`);
+      window.location.href = `mailto:${internalCheckoutEmail}?subject=${subject}&body=${body}`;
     });
 
     document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => closeModal(btn.dataset.close)));
