@@ -3,67 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Knock Knock Saya | Services</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <title>About | Knock Knock Saya</title>
   <style>
     :root {
-      --bg1: #16042c; --bg2: #2d0f52; --bg3: #0f2448;
-      --card: rgba(38,17,71,.9); --pink:#ff1e8a; --gold:#ffd84d; --mint:#5effd6;
-      --border:#55327f; --text:#f4ecff;
+      --gold: #ffd84d;
+      --pink: #ff1e8a;
+      --mint: #5effd6;
+      --card: rgba(35, 15, 62, 0.9);
+      --border: #5a3b88;
+      --text: #f7efff;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+    * { box-sizing: border-box; }
+
     body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       color: var(--text);
-      background: linear-gradient(130deg, var(--bg1), var(--bg2), var(--bg3), #5a0e59);
-      background-size: 260% 260%; animation: shift 16s ease infinite; min-height: 100vh;
+      background: linear-gradient(130deg, #140327, #321255, #0d2a51, #5a0f59);
+      background-size: 250% 250%;
+      animation: bg 16s ease infinite;
+      min-height: 100vh;
     }
-    @keyframes shift {0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header,
+    footer {
+      padding: 16px 8%;
+      background: rgba(10, 4, 22, 0.75);
+      border-bottom: 1px solid #4d2f74;
+    }
 
     header {
-      position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 8%; background: rgba(12,4,26,0.75); backdrop-filter: blur(10px); border-bottom: 1px solid #4a2e74;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
+
+    footer {
+      border-bottom: none;
+      border-top: 1px solid #4d2f74;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .logo {
       color: #fff;
       text-decoration: none;
-      display: inline-block; font-size: 2.1rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 10px #ff1e8a, 0 0 20px #ff1e8a, 0 0 35px #6e4bff; }
-    nav a { color:white; text-decoration:none; font-weight:700; padding:8px 12px; border-radius:999px; margin-left:8px; }
-    nav a.active, nav a:hover { background: var(--pink); }
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #ff1e8a, 0 0 22px #6e4bff, 0 0 35px #ff1e8a;
+    }
 
-    .cart-box { background: var(--pink); padding: 9px 14px; border-radius: 999px; display: inline-flex; gap: 8px; margin-left: 8px; cursor: pointer; font-weight: 800; }
-    .hero { text-align: center; padding: 56px 18px 24px; }
-    .hero h1 { color: var(--gold); font-size: 2.6rem; }
-    .hero p { max-width: 850px; margin: 10px auto 0; line-height: 1.7; color: #ddd0ff; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
 
-    .info-band { margin: 0 8% 12px; background: rgba(38,17,71,.75); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
-    .info-band h2 { color: var(--gold); margin-bottom: 8px; font-size: 1.2rem; }
-    .info-band p { color:#e8ddff; line-height:1.6; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
 
-    .grid { padding: 12px 8% 58px; display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; position: relative; }
-    .card img { width:100%; aspect-ratio:1/1; object-fit:cover; }
-    .card-body { padding: 12px; }
-    .tag { color:#ceb5ff; font-size:.82rem; margin-bottom:5px; }
-    .name { min-height: 44px; font-weight: 700; }
-    .price { color: var(--mint); font-size: 1.2rem; font-weight: 900; margin: 8px 0 10px; }
-    .badge { position:absolute; top:10px; left:10px; font-size:.7rem; font-weight:900; background:var(--pink); padding:5px 8px; border-radius:5px; }
-    .btn { width:100%; border:none; border-radius:8px; padding:11px; font-weight:800; cursor:pointer; color:white; background:var(--pink); }
+    nav a:hover,
+    nav a.active { background: var(--pink); }
 
-    .modal { display:none; position:fixed; inset:0; z-index:20; background:rgba(0,0,0,.8); backdrop-filter: blur(6px); overflow-y:auto; padding:20px 10px; }
-    .modal-content { max-width:560px; margin:12px auto; border:2px solid var(--pink); border-radius:16px; background:#1f0d3b; padding:20px; position:relative; }
-    .close-btn { position:absolute; right:14px; top:8px; font-size:30px; cursor:pointer; }
-    form label { display:block; margin-top:10px; font-size:.82rem; color:#d2c4f8; }
-    form input, form textarea { width:100%; margin-top:5px; border-radius:8px; border:1px solid #5f4292; background:#2a144a; color:white; padding:10px; }
-    .materials-wrap { margin-top:8px; background:#2b1550; padding:10px; border-radius:10px; }
-    .material-row { display:grid; grid-template-columns:auto 1fr 72px; gap:9px; align-items:center; margin-bottom:8px; }
-    .cart-item { border:1px solid #5b3a8a; border-radius:10px; background:#2a154b; padding:10px; margin-bottom:10px; }
-    .cart-item ul { margin-left:18px; margin-top:6px; color:#e0d1ff; }
-    .total { color:var(--mint); font-weight:900; font-size:1.2rem; margin-top:8px; }
+    main {
+      max-width: 1000px;
+      margin: 34px auto;
+      padding: 0 16px 20px;
+    }
 
-    .checkout-btn { margin-top: 12px; background: #21a745; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
 
-    footer { padding:24px 8%; border-top:1px solid #4a2e74; background:rgba(12,4,26,.7); display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
-    .foot-brand { font-weight:900; color:var(--gold); }
+    h1, h2 { color: var(--gold); margin-top: 0; }
+
+    .lead,
+    .note {
+      margin-top: 12px;
+      color: #e5d8ff;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      margin-top: 14px;
+      border: 1px solid rgba(94, 255, 214, 0.4);
+      background: rgba(94, 255, 214, 0.08);
+      color: #d8fff6;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .founders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .founder {
+      background: #2a164a;
+      border: 1px solid #614192;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .founder strong { display: block; font-size: 1rem; }
+    .founder small { color: #d7c7ff; }
+    .foot-brand { color: var(--gold); font-weight: 900; }
+
+    @media (max-width: 720px) {
+      header { padding: 14px 5%; }
+      nav { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -71,222 +147,36 @@
     <a class="logo" href="index.html" aria-label="Knock Knock Saya Home">Knock Knock Saya</a>
     <nav>
       <a href="index.html">Home</a>
-      <a class="active" href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <span class="cart-box" id="openCartBtn"><i class="fas fa-shopping-cart"></i><span id="cart-counter">0</span></span>
+      <a href="services.html">Services</a>
+      <a class="active" href="about.html">About</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Services & Checkout</h1>
-    <p>Choose from our Birthday, Mother's Day, Father's Day, and Valentine's Day packages designed for every budget and celebration style. Add thoughtful extras, complete your order in minutes, and let Knock Knock Saya deliver love and joy straight to your loved ones.</p>
-  </section>
+  <main>
+    <section class="card">
+      <h1>About Knock Knock Saya</h1>
+      <p class="lead">Knock Knock Saya is a surprise-gifting and celebration delivery service that helps Filipinos express love, even from afar. We turn ordinary days into unforgettable moments through curated Birthday, Mother’s Day, Father’s Day, and Valentine’s Day packages delivered with care.</p>
+      <p class="note">Every package is prepared with heart—from flowers and cakes to personalized celebration bundles—so your loved ones feel seen, appreciated, and deeply loved. With easy ordering and dependable delivery, we make sure every “Knock Knock” becomes a moment of joy.</p>
+      <div class="highlight"><strong>Our mission:</strong> to bring smiles, strengthen family connections, and spread love across Filipino homes—one surprise at a time.</div>
+    </section>
 
-
-
-  <section class="info-band">
-    <h2>How ordering works</h2>
-    <p>Select a package, add recipient details, choose optional materials, and click checkout. Your order draft opens in email so you can send it directly for confirmation.</p>
-  </section>
-
-  <section class="grid" id="main-grid"></section>
-
-  <div id="bookingModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" data-close="bookingModal">&times;</span>
-      <h2 id="m-title" style="color:var(--gold)">Package Name</h2>
-      <p id="m-price" style="color:var(--mint);font-size:1.4rem;font-weight:900"></p>
-      <p id="m-category" style="color:#d6c6ff"></p>
-      <form id="mainOrderForm">
-        <label>Recipient Full Name</label><input id="r-name" type="text" required />
-        <label>Event Date</label><input id="r-date" type="date" required />
-        <label>Delivery Address</label><textarea id="r-address" rows="3" required></textarea>
-        <label>Additional Materials (Optional)</label>
-        <div id="materialsContainer" class="materials-wrap"></div>
-        <button type="submit" class="btn" style="margin-top:14px;background:#21a745">CONFIRM + ADD TO CART</button>
-      </form>
-    </div>
-  </div>
-
-  <div id="cartModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" data-close="cartModal">&times;</span>
-      <h2 style="color:var(--gold);margin-bottom:8px">Your Cart</h2>
-      <div id="cartItemsContainer"></div>
-      <div class="total" id="cartTotal">Total: ₱0.00</div>
-      <button class="btn checkout-btn" id="checkoutBtn">CHECKOUT</button>
-    </div>
-  </div>
+    <section class="card">
+      <h2>Founders</h2>
+      <div class="founders">
+        <div class="founder"><strong>Aivan Saranguero</strong><small>Co-Founder • Operations & Logistics</small></div>
+        <div class="founder"><strong>Kissie Dianne Are</strong><small>Co-Founder • Client Relations</small></div>
+        <div class="founder"><strong>Heinrich Discutido</strong><small>Co-Founder • Package Development</small></div>
+        <div class="founder"><strong>Cielo Mae San Juan</strong><small>Co-Founder • Creative Direction</small></div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div><div class="foot-brand">Knock Knock Saya</div><div>We Knock. You Smile.</div></div>
+    <div>
+      <div class="foot-brand">Knock Knock Saya</div>
+      <div>We Knock. You Smile.</div>
+    </div>
     <div>© 2026 Knock Knock Saya. All rights reserved.</div>
   </footer>
-
-  <script>
-    const packageData = [
-      { id: 1, category: 'Birthday', tier: 'Budget', name: 'Birthday Budget Package', price: 2199, image: 'bday_budget.jpg', badge: 'BUDGET' },
-      { id: 2, category: 'Birthday', tier: 'Standard', name: 'Birthday Food Bilao Pulutan Package', price: 749, image: 'bday_foodbilao.jpg', badge: 'STANDARD' },
-      { id: 3, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Personalized Cake Package', price: 900, image: 'bday_personalizedcake.jpg', badge: 'DELUXE' },
-      { id: 4, category: 'Birthday', tier: 'Deluxe', name: 'Birthday Money & Teddy Bear Bouquet', price: 799, image: 'bday_teddybear.jpg', badge: 'DELUXE' },
-      { id: 5, category: 'Birthday', tier: 'Elite', name: 'Birthday Elite Package', price: 4999, image: 'bday_elite.jpg', badge: 'ELITE' },
-      { id: 6, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 1', price: 3499, image: 'bday_richkid1.jpg', badge: 'PREMIUM' },
-      { id: 7, category: 'Birthday', tier: 'Premium', name: 'Birthday Rich Kid Package 2', price: 3499, image: 'bday_richkid2.jpg', badge: 'PREMIUM' },
-      { id: 8, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 1', price: 2999, image: 'bday_yayamanin1.jpg', badge: 'VIP' },
-      { id: 9, category: 'Birthday', tier: 'Premium', name: 'Birthday Yayamanin Package 2', price: 2999, image: 'bday_yayamanin2.jpg', badge: 'VIP' },
-
-      { id: 10, category: "Mother's Day", tier: 'Budget', name: "Mother's Day Budget Package", price: 999, image: 'mother_budget.jpg', badge: 'BUDGET' },
-      { id: 11, category: "Mother's Day", tier: 'Student', name: "Mother's Day Student Package", price: 699, image: 'mother_student.jpg', badge: 'STUDENT' },
-      { id: 12, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Standard Package", price: 1499, image: 'mother_standard.jpg', badge: 'STANDARD' },
-      { id: 13, category: "Mother's Day", tier: 'Standard', name: "Mother's Day Bouquet Package", price: 999, image: 'mother_bouquet.jpg', badge: 'FLOWER' },
-      { id: 14, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Deluxe Package", price: 1999, image: 'mother_deluxe.jpg', badge: 'DELUXE' },
-      { id: 15, category: "Mother's Day", tier: 'Deluxe', name: "Mother's Day Pillows & Chocolates", price: 199, image: 'mother_pillows_chocolates.jpg', badge: 'DELUXE' },
-      { id: 16, category: "Mother's Day", tier: 'Elite', name: "Mother's Day Elite Package", price: 2999, image: 'mother_elite.jpg', badge: 'ELITE' },
-      { id: 17, category: "Mother's Day", tier: 'Premium', name: "Mother's Day Premium Package", price: 2499, image: 'mother_premium.jpg', badge: 'PREMIUM' },
-
-      { id: 18, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package 1", price: 999, image: 'father_budget.jpg', badge: 'BUDGET' },
-      { id: 19, category: "Father's Day", tier: 'Budget', name: "Father's Day Budget Package 2", price: 999, image: 'father_budget2.jpg', badge: 'BUDGET' },
-      { id: 20, category: "Father's Day", tier: 'Student', name: "Father's Day Student Package", price: 499, image: 'father_student.jpg', badge: 'STUDENT' },
-      { id: 21, category: "Father's Day", tier: 'Standard', name: "Father's Day Standard Package", price: 1499, image: 'father_standard.jpg', badge: 'STANDARD' },
-      { id: 22, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Deluxe Package", price: 1999, image: 'father_deluxe.jpg', badge: 'DELUXE' },
-      { id: 23, category: "Father's Day", tier: 'Deluxe', name: "Father's Day Sweet Cakes", price: 299, image: 'father_sweetcakes.jpg', badge: 'DELUXE' },
-      { id: 24, category: "Father's Day", tier: 'Premium', name: "Father's Day Money Sash + Pulutan", price: 699, image: 'father_moneysash_pulutan.jpg', badge: 'PREMIUM' },
-      { id: 25, category: "Father's Day", tier: 'Premium', name: "Father's Day Premium Package", price: 2499, image: 'father_premium.jpg', badge: 'PREMIUM' },
-
-      { id: 26, category: "Valentine's Day", tier: 'Budget', name: "Valentine's Day Budget Package", price: 999, image: 'val_budget.jpg', badge: 'BUDGET' },
-      { id: 27, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Standard Package", price: 1499, image: 'val_standard.jpg', badge: 'STANDARD' },
-      { id: 28, category: "Valentine's Day", tier: 'Standard', name: "Valentine's Day Bouquet + Cakes", price: 1199, image: 'val_bouquet_cakes.jpg', badge: 'FLOWER' },
-      { id: 29, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Deluxe Package", price: 1999, image: 'val_deluxe.jpg', badge: 'DELUXE' },
-      { id: 30, category: "Valentine's Day", tier: 'Deluxe', name: "Valentine's Day Pillow + Chocolates", price: 300, image: 'val_pillow_chocolates.jpg', badge: 'DELUXE' },
-      { id: 31, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium (1 Dozen Rose)", price: 3499, image: 'val_premium1.jpg', badge: 'PREMIUM' },
-      { id: 32, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium (1/2 Dozen Rose)", price: 2999, image: 'val_premium_onehalf.jpg', badge: 'PREMIUM' },
-      { id: 33, category: "Valentine's Day", tier: 'Premium', name: "Valentine's Day Premium Money Package", price: 2499, image: 'val_premiummoney.jpg', badge: 'PREMIUM' }
-    ];
-
-    const materialsByCategory = {
-      'Birthday': [{ name: 'Balloon Set', price: 350 }, { name: 'Cake Topper', price: 150 }, { name: 'Party Banner', price: 250 }],
-      "Mother's Day": [{ name: 'Fresh Flower Wrap', price: 500 }, { name: 'Chocolate Box', price: 350 }, { name: 'Message Card Set', price: 120 }],
-      "Father's Day": [{ name: 'Mini Gift Box', price: 420 }, { name: 'Snack Bundle', price: 280 }, { name: 'Personalized Note Card', price: 120 }],
-      "Valentine's Day": [{ name: 'Rose Bouquet', price: 800 }, { name: 'Chocolate Box', price: 450 }, { name: 'LED Candles', price: 260 }]
-    };
-
-    let selectedPackage = null;
-    const cart = [];
-    const gridEl = document.getElementById('main-grid');
-    const bookingModal = document.getElementById('bookingModal');
-    const cartModal = document.getElementById('cartModal');
-    const materialsContainer = document.getElementById('materialsContainer');
-    const phpMoney = (v) => `₱${v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-    const internalCheckoutEmail = 'arekissie@gmail.com';
-
-    function renderPackages() {
-      gridEl.innerHTML = packageData.map(p => `
-        <div class="card">
-          ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
-          <img src="${p.image}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/400?text=Image+Unavailable'">
-          <div class="card-body">
-            <div class="tag">${p.category} • ${p.tier}</div>
-            <div class="name">${p.name}</div>
-            <div class="price">${phpMoney(p.price)}</div>
-            <button class="btn" onclick="openBooking(${p.id})">Select Package</button>
-          </div>
-        </div>`).join('');
-    }
-
-    function renderMaterials(category) {
-      const mats = materialsByCategory[category] || [];
-      materialsContainer.innerHTML = mats.map((m, i) => `
-        <div class="material-row">
-          <input type="checkbox" id="mat-${i}" data-name="${m.name}" data-price="${m.price}">
-          <label for="mat-${i}">${m.name} (${phpMoney(m.price)} each)</label>
-          <input type="number" id="qty-${i}" min="1" value="1">
-        </div>`).join('') || '<p>No materials available.</p>';
-    }
-
-    function openBooking(id) {
-      const pkg = packageData.find(p => p.id === id);
-      if (!pkg) return;
-      selectedPackage = pkg;
-      document.getElementById('m-title').innerText = pkg.name;
-      document.getElementById('m-price').innerText = phpMoney(pkg.price);
-      document.getElementById('m-category').innerText = `Event: ${pkg.category}`;
-      renderMaterials(pkg.category);
-      bookingModal.style.display = 'block';
-    }
-
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-
-    function renderCart() {
-      const wrap = document.getElementById('cartItemsContainer');
-      document.getElementById('cart-counter').innerText = cart.length;
-      if (!cart.length) {
-        wrap.innerHTML = '<p>Your cart is empty.</p>';
-        document.getElementById('cartTotal').innerText = 'Total: ₱0.00';
-        return;
-      }
-
-      let total = 0;
-      wrap.innerHTML = cart.map(item => {
-        const matsTotal = item.materials.reduce((s, m) => s + m.price * m.qty, 0);
-        const line = item.packagePrice + matsTotal;
-        total += line;
-        return `<div class="cart-item"><strong>${item.packageName}</strong><p>${item.category} • ${item.recipient} • ${item.date}</p><p>Package: ${phpMoney(item.packagePrice)}</p>${item.materials.length ? `<ul>${item.materials.map(m => `<li>${m.name} x${m.qty} (${phpMoney(m.price*m.qty)})</li>`).join('')}</ul>` : '<p>No add-ons selected.</p>'}<p style="margin-top:6px;color:var(--mint)">Line Total: ${phpMoney(line)}</p></div>`;
-      }).join('');
-      document.getElementById('cartTotal').innerText = `Total: ${phpMoney(total)}`;
-    }
-
-    document.getElementById('mainOrderForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!selectedPackage) return;
-      const selectedMaterials = [...materialsContainer.querySelectorAll('input[type="checkbox"]:checked')].map(check => {
-        const idx = check.id.split('-')[1];
-        const qty = Math.max(1, parseInt(document.getElementById(`qty-${idx}`).value, 10) || 1);
-        return { name: check.dataset.name, price: Number(check.dataset.price), qty };
-      });
-      cart.push({
-        category: selectedPackage.category,
-        packageName: selectedPackage.name,
-        packagePrice: selectedPackage.price,
-        recipient: document.getElementById('r-name').value.trim(),
-        date: document.getElementById('r-date').value,
-        address: document.getElementById('r-address').value.trim(),
-        materials: selectedMaterials
-      });
-      renderCart(); this.reset(); closeModal('bookingModal'); alert('Added to cart!');
-    });
-
-    document.getElementById('checkoutBtn').addEventListener('click', function() {
-      if (!cart.length) {
-        alert('Your cart is empty.');
-        return;
-      }
-      const orderLines = [];
-      let grand = 0;
-      cart.forEach((item, i) => {
-        const matsTotal = item.materials.reduce((s, m) => s + m.price * m.qty, 0);
-        const line = item.packagePrice + matsTotal;
-        grand += line;
-        orderLines.push(
-          `${i + 1}. ${item.packageName} (${item.category})\n` +
-          `Recipient: ${item.recipient}\n` +
-          `Date: ${item.date}\n` +
-          `Address: ${item.address}\n` +
-          `Package Price: ${phpMoney(item.packagePrice)}\n` +
-          `Add-ons: ${item.materials.length ? item.materials.map(m => `${m.name} x${m.qty}`).join(', ') : 'None'}\n` +
-          `Line Total: ${phpMoney(line)}`
-        );
-      });
-      const subject = encodeURIComponent('Knock Knock Saya Checkout Order');
-      const body = encodeURIComponent(`New checkout order:\n\n${orderLines.join('\n\n')}\n\nGrand Total: ${phpMoney(grand)}`);
-      window.location.href = `mailto:${internalCheckoutEmail}?subject=${subject}&body=${body}`;
-    });
-
-    document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => closeModal(btn.dataset.close)));
-    document.getElementById('openCartBtn').addEventListener('click', () => { renderCart(); cartModal.style.display = 'block'; });
-    window.addEventListener('click', (e) => { if (e.target === bookingModal) closeModal('bookingModal'); if (e.target === cartModal) closeModal('cartModal'); });
-
-    renderPackages();
-    renderCart();
-  </script>
 </body>
 </html>
