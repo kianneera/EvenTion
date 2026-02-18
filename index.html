@@ -3,31 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Knock Knock Saya</title>
+  <title>Knock Knock Saya | Home</title>
   <style>
-    :root { --gold:#ffd84d; --pink:#ff1e8a; }
-    body {
-      margin: 0; font-family: 'Segoe UI', sans-serif; color: #f7efff;
-      background: linear-gradient(130deg, #140327, #321255, #0d2a51, #5a0f59);
-      background-size: 250% 250%; animation: bg 16s ease infinite; min-height: 100vh;
+    :root {
+      --gold: #ffd84d;
+      --pink: #ff1e8a;
+      --mint: #5effd6;
+      --card: rgba(35, 15, 62, 0.9);
+      --border: #5a3b88;
     }
-    @keyframes bg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-    header, footer { padding: 16px 8%; background: rgba(10, 4, 22, 0.75); border-bottom: 1px solid #4d2f74; }
-    footer { border-bottom: none; border-top: 1px solid #4d2f74; margin-top: 30px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f7efff;
+      background: linear-gradient(130deg, #140327, #321255, #0d2a51, #5a0f59);
+      background-size: 250% 250%;
+      animation: bg 16s ease infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header,
+    footer {
+      padding: 16px 8%;
+      background: rgba(10, 4, 22, 0.75);
+      border-bottom: 1px solid #4d2f74;
+    }
+
+    footer {
+      border-bottom: none;
+      border-top: 1px solid #4d2f74;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .logo {
-      font-size: 2rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       text-shadow: 0 0 10px #ff1e8a, 0 0 22px #6e4bff, 0 0 35px #ff1e8a;
     }
-    nav a { color: #fff; text-decoration: none; margin-right: 8px; font-weight: 700; padding:8px 12px; border-radius:999px; }
-    nav a:hover, nav a.active { background: var(--pink); }
-    main { max-width: 960px; margin: 40px auto; padding: 0 16px; }
-    .card { background: rgba(35, 15, 62, 0.9); border: 1px solid #5a3b88; border-radius: 14px; padding: 24px; }
-    h1 { color: var(--gold); }
-    .founders { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 12px; margin-top: 18px; }
-    .founder { background: #2a164a; border: 1px solid #614192; border-radius: 10px; padding: 14px; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 8px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    nav a:hover,
+    nav a.active { background: var(--pink); }
+
+    main {
+      max-width: 1100px;
+      margin: 34px auto;
+      padding: 0 16px 24px;
+    }
+
+    .hero,
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1,
+    .section-title { color: var(--gold); margin-top: 0; }
+
+    .hero p,
+    .story-text,
+    .note { line-height: 1.6; color: #e5d8ff; }
+
+    .cta {
+      display: inline-block;
+      margin-top: 8px;
+      color: #fff;
+      background: var(--pink);
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .issue-box {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(94, 255, 214, 0.1);
+      border: 1px solid rgba(94, 255, 214, 0.4);
+      color: #d8fff6;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .story-card {
+      background: #251047;
+      border: 1px solid #614192;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-body { padding: 14px; }
+    .story-body h3 { margin: 0 0 8px; color: var(--mint); }
+    .story-body p { margin: 0; }
+
+    .founders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .founder {
+      background: #2a164a;
+      border: 1px solid #614192;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
     .founder strong { display: block; font-size: 1rem; }
     .founder small { color: #d7c7ff; }
-    .note { margin-top: 14px; color: #d9c8ff; line-height: 1.6; }
+
     .foot-brand { color: var(--gold); font-weight: 900; }
   </style>
 </head>
@@ -35,26 +159,62 @@
   <header>
     <div class="logo">Knock Knock Saya</div>
     <nav>
-      <a href="index.html">Home</a>
+      <a class="active" href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a class="active" href="about.html">About</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
   <main>
-    <div class="card">
-      <h1>About Knock Knock Saya</h1>
-      <p class="note">Knock Knock Saya is a surprise-gifting and package service that helps customers send love to their family, friends, and partners through curated Birthday, Mother's Day, Father's Day, and Valentine's Day packages.</p>
-      <p class="note">Our services focus on easy ordering, thoughtful package options, and smooth delivery so every gift feels personal and memorable for your loved ones.</p>
+    <section class="hero">
+      <h1>We Deliver the Surprise, You Deliver the Love</h1>
+      <p>Knock Knock Saya helps Filipinos celebrate birthdays, milestones, and family moments with heartfelt surprise deliveries that reach loved ones right at their doorstep.</p>
+      <a class="cta" href="services.html">Browse Packages</a>
+      <div class="issue-box">
+        <strong>Issue Fixed:</strong> The previous <em>Home</em> page was showing About-page content and wrong page title/navigation state. It is now restored as a true landing page with featured stories and a clear call to action.
+      </div>
+    </section>
 
-      <h2>Founders</h2>
+    <section class="section-card">
+      <h2 class="section-title">Stories of Saya</h2>
+      <p class="story-text">Every surprise tells a story. Families separated by distance still find a way to say, "Mahal kita." Through Knock Knock Saya, every gift, bouquet, and food tray becomes a warm embrace that brings joy into Filipino homes.</p>
+      <div class="story-grid">
+        <article class="story-card">
+          <img src="bday_foodbilao.jpg" alt="Birthday surprise package with food and balloons delivered to a Filipino family" />
+          <div class="story-body">
+            <h3>A Daughter's Birthday Gift for Tatay</h3>
+            <p class="story-text">A daughter working far from home booked a Knock Knock Saya birthday surprise for her father. When the team arrived with balloons, food, and flowers, the whole family smiled through happy tears. In that moment, distance disappeared—and love took its place.</p>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <img src="mother_bouquet.jpg" alt="Mother's day bouquet surprise delivered by Knock Knock Saya" />
+          <div class="story-body">
+            <h3>Nanay's Unexpected Smile</h3>
+            <p class="story-text">A simple bouquet and thoughtful package turned an ordinary afternoon into an unforgettable Mother's Day. Nanay said it felt like receiving a hug from her children, even when they could not be physically present.</p>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <img src="father_sweetcakes.jpg" alt="Father's Day sweet cake and celebration package by Knock Knock Saya" />
+          <div class="story-body">
+            <h3>Love Shared at the Family Table</h3>
+            <p class="story-text">From cakes to complete surprise sets, families gather around what was delivered and celebrate together. Knock Knock Saya brings more than packages—it brings joy, connection, and cherished memories for Filipinos.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2 class="section-title">Our Founders</h2>
+      <p class="note">Knock Knock Saya is powered by a team committed to making every delivery feel meaningful, personal, and full of heart.</p>
       <div class="founders">
         <div class="founder"><strong>Aivan Saranguero</strong><small>Co-Founder • Operations & Logistics</small></div>
         <div class="founder"><strong>Kissie Dianne Are</strong><small>Co-Founder • Client Relations</small></div>
         <div class="founder"><strong>Heinrich Discutido</strong><small>Co-Founder • Package Development</small></div>
         <div class="founder"><strong>Cielo Mae San Juan</strong><small>Co-Founder • Creative Direction</small></div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
@@ -64,5 +224,7 @@
     </div>
     <div>© 2026 Knock Knock Saya. All rights reserved.</div>
   </footer>
+</body>
+</html>
 </body>
 </html>
